@@ -1,0 +1,39 @@
+打开主程序文件   Run As-->Java Application
+com.qykj.SpringbootTomcatApplication  
+
+
+使用此项目如有报错首先配置maven环境 maven的setting.xml文件参考help文件夹内
+然后安装lombok编译环境
+安装步骤：
+　　1.下载lombok.jar包(help文件夹内已提供lombok-1.16.18.jar)
+　　2.将lombok-1.16.18.jar包复制到myeclipse.ini/eclipse.ini所在文件目录(即eclipse或myeclipse安装目录下)
+　　3.打开myeclipse.ini/eclipse.ini，在最后添加以下代码并保存：
+
+　　　　-javaagent:lombok-1.16.18.jar
+
+　　4.重启myeclipse/eclipse.
+　　5.project==>clean 清理项目
+如果是用idea开发工具  File->Setting->Plugins-> 搜索lombok 找到Lombok Plugin 安装后即可 (安装后可能也要重启)
+
+开发说明 
+Service层实现了两种默认的分页查询方法 使用详见
+单元测试类com.qykj.finance.event.DemoQueryTest
+
+JPA标准的查询方法Dao层详见
+com.qykj.finance.demo.repository.DemoRepository
+
+SpringMvc的案例
+com.qykj.finance.web.action.DemoController
+
+
+框架  thymeleaf + SpringMvc + Spring + Hibernate(JPA2.1)  数据库默认采用mysql(连接池druid)
+另外使用了SWAGGER_2  后端自动API生成地址 /swagger-ui.html
+
+本项目采用thymeleaf 2.5.1的模板技术,详见demo,复杂用法请参考官方API http://www.thymeleaf.org/
+1.static目录 
+存静态页面 资源文件
+2.templates
+存控制层跳转页面模板
+3.事务控制2选1  transaction.xml或com.qykj.finance.config.TransactionConfig
+service 中最外层调用的service方法名会限制事务的开启状态
+现配置中只有update* delete*  reset* 名字的方法才能开启事务更改数据库内容
