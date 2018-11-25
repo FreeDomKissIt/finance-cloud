@@ -7,7 +7,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.apache.commons.codec.binary.Hex;
-import org.junit.Test;
 
 import com.qykj.finance.core.util.BeanUtil;
 import com.qykj.finance.core.util.EncryptUtil;
@@ -76,29 +75,7 @@ public class EncryptUtilTest {
 		return encdeStr;
 	}
 
-	/**
-	 * 盐密码原理
-	 * 
-	 * @since 1.0.0
-	 */
-	//@Test
-	public void EncryptUtil() {
-		String ypwd = "hik12345+";
-		String password = getSHA256StrJava(ypwd);
-		log.info("后台收到密码:{}", password);
-		String salt = EncryptUtil.createSalt();
-		salt = "5d9ebf02fb7848b08eee5e6f94968354";
-
-		log.info("salt:{}", salt);
-		log.info("数据库存储密码:{}", EncryptUtil.encrypt(password, salt));
-		log.info("数据库存储密码:{}", EncryptUtil.encrypt(password, salt));
-		User user = new User();
-		user.setName("1");
-
-		System.out.println(BeanUtil.getSqlParam(user));
-	}
 	
-	@Test
 	public void EncryptUtil2() {
 		String ypwd = "hik12345+";
 		String password = md5x32Code(ypwd);

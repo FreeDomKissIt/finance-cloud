@@ -4,9 +4,6 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
-import org.apache.shiro.authc.IncorrectCredentialsException;
-import org.apache.shiro.authc.LockedAccountException;
-import org.apache.shiro.authc.UnknownAccountException;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -17,10 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.qykj.finance.core.cache.CacheContainer;
-import com.qykj.finance.core.exception.LicenseExpireException;
 import com.qykj.finance.core.util.ActionResponse;
 import com.qykj.finance.shiro.Credentials;
-import com.qykj.finance.sys.model.Org;
 import com.qykj.finance.util.SessionUtil;
 
 import io.swagger.annotations.ApiOperation;
@@ -123,8 +118,8 @@ public class LoginController {
 	 */
 	@GetMapping("/index")
 	public String index(Model model) throws Exception {
-		Org org = SessionUtil.getCurrentOrg();
-		model.addAttribute("org", org);
+		//Org org = SessionUtil.getCurrentOrg();
+		//model.addAttribute("org", org);
 		return "index";
 	}
 

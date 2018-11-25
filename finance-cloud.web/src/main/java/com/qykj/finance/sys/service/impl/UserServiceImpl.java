@@ -7,11 +7,8 @@ import com.github.pagehelper.Page;
 import com.qykj.finance.common.CommonConstant;
 import com.qykj.finance.core.persistence.service.impl.AbstractQueryServiceImpl;
 import com.qykj.finance.core.util.EncryptUtil;
-import com.qykj.finance.sys.model.Org;
-import com.qykj.finance.sys.model.Role;
 import com.qykj.finance.sys.model.User;
 import com.qykj.finance.sys.repository.UserRepository;
-import com.qykj.finance.sys.service.OrgService;
 import com.qykj.finance.sys.service.RoleService;
 import com.qykj.finance.sys.service.UserService;
 
@@ -29,8 +26,6 @@ public class UserServiceImpl extends AbstractQueryServiceImpl<User> implements U
 	private UserRepository userInfoRepository;
 	@Autowired
 	private RoleService roleService;
-	@Autowired
-	private OrgService orgService;
 
 	/**
 	 * 添加新用户
@@ -186,7 +181,7 @@ public class UserServiceImpl extends AbstractQueryServiceImpl<User> implements U
 	 * @author    wenjing
 	 * @see       [相关类/方法]
 	 * @since     V1.0.0
-	 */
+	 *//*
 	@Override
 	public void addUser(User user, Integer orgId, Integer roleId) {
 		updateOrAddRoleAndOrg(user, orgId, roleId);
@@ -194,7 +189,7 @@ public class UserServiceImpl extends AbstractQueryServiceImpl<User> implements U
 	}
 
 	
-	/**
+	*//**
 	 * 修改用户角色和组织
 	 * @param user
 	 * @param orgId
@@ -202,7 +197,7 @@ public class UserServiceImpl extends AbstractQueryServiceImpl<User> implements U
 	 * @author    wenjing
 	 * @see       [相关类/方法]
 	 * @since     V1.0.0
-	 */
+	 *//*
 	private void updateOrAddRoleAndOrg(User user, Integer orgId, Integer roleId) {
 		user.setRole(null);
 		user.setOrg(null);
@@ -214,7 +209,7 @@ public class UserServiceImpl extends AbstractQueryServiceImpl<User> implements U
 			Role role = roleService.findOne(roleId);
 			user.setRole(role);
 		}
-	}
+	}*/
 	
 	/**
 	 * 修改用户
@@ -225,7 +220,7 @@ public class UserServiceImpl extends AbstractQueryServiceImpl<User> implements U
 	 * @see       [相关类/方法]
 	 * @since     V1.0.0
 	 */
-	@Override
+	/*@Override
 	public void updateUser(User user, Integer orgId, Integer roleId) {
 		User dbUser = userInfoRepository.getOne(user.getId());
 		updateOrAddRoleAndOrg(dbUser, orgId, roleId);
@@ -236,7 +231,7 @@ public class UserServiceImpl extends AbstractQueryServiceImpl<User> implements U
 		dbUser.setEmail(user.getEmail());
 		dbUser.setState(user.getState());
 		userInfoRepository.save(dbUser);
-	}
+	}*/
 	
 	/**
 	 * 启用
@@ -264,5 +259,17 @@ public class UserServiceImpl extends AbstractQueryServiceImpl<User> implements U
 		User dbUser = userInfoRepository.getOne(id);
 		dbUser.setState(CommonConstant.USER_STATUS_LOCK);
 		userInfoRepository.save(dbUser);
+	}
+
+	@Override
+	public void addUser(User user, Integer orgId, Integer roleId) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void updateUser(User user, Integer orgId, Integer roleId) {
+		// TODO Auto-generated method stub
+		
 	}
 }

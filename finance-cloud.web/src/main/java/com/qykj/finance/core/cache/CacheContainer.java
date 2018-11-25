@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-import com.qykj.finance.core.cache.sys.DistrictCache;
 import com.qykj.finance.core.cache.sys.MenuNode;
 
 import lombok.Getter;

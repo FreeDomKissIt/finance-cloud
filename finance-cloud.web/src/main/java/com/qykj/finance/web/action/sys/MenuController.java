@@ -19,12 +19,12 @@ import com.qykj.finance.core.cache.sys.MenuNode;
 import com.qykj.finance.core.persistence.service.QueryService;
 import com.qykj.finance.core.util.ActionPageResponse;
 import com.qykj.finance.core.util.ActionResponse;
-import com.qykj.finance.core.util.ListUtils;
 import com.qykj.finance.sys.form.MenuForm;
 import com.qykj.finance.sys.model.Menu;
 import com.qykj.finance.sys.service.MenuService;
 import com.qykj.finance.sys.service.RoleService;
 import com.qykj.finance.sys.service.UserService;
+import com.qykj.finance.util.ListUtils;
 import com.qykj.finance.util.SessionUtil;
 
 import io.swagger.annotations.ApiOperation;

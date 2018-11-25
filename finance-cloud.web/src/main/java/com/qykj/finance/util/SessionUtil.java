@@ -12,8 +12,6 @@ import org.springframework.beans.BeanUtils;
 import com.qykj.finance.core.cache.CacheContainer;
 import com.qykj.finance.core.cache.sys.MenuNode;
 import com.qykj.finance.core.exception.PageException;
-import com.qykj.finance.sys.model.District;
-import com.qykj.finance.sys.model.Org;
 import com.qykj.finance.sys.model.Role;
 import com.qykj.finance.sys.model.RoleMenu;
 import com.qykj.finance.sys.model.User;
@@ -40,23 +38,6 @@ public class SessionUtil {
 		}
 
 		return user;
-	}
-	
-	/**
-	 * 是否全国用户
-	 * @return
-	 * @author    wenjing
-	 * @see       [相关类/方法]
-	 * @since     V1.0.0
-	 */
-	public static boolean isNationUser() {
-		District district = getCurrentOrg().getDistrict();
-		if (district != null && district.getId() != null) {
-			if (DistrictUtil.NATIONWIDE_CODE.equals(district.getId().toString())) {
-				return true;
-			}
-		}
-		return false;
 	}
 	
 	/**
@@ -145,14 +126,14 @@ public class SessionUtil {
 	 * @see       [相关类/方法]
 	 * @since     V1.0.0
 	 */
-	public static Org getCurrentOrg() {
+	/*public static Org getCurrentOrg() {
 		User user = getCurrentUser();
 		if (user != null) {
 			Org org = user.getOrg();
 			return org;
 		}
 		return null;
-	}
+	}*/
 
 	/**
 	 * 获得当前用户角色

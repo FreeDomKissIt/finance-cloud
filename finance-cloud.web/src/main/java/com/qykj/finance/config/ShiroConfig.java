@@ -16,7 +16,7 @@ import org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreato
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.qykj.finance.shiro.HikShiroRealm;
+import com.qykj.finance.shiro.ShiroRealm;
 import com.qykj.finance.shiro.KaptchaFilter;
 
 import lombok.extern.slf4j.Slf4j;
@@ -63,8 +63,8 @@ public class ShiroConfig {
 	 * @since 1.0.0
 	 */
 	@Bean
-	public HikShiroRealm hikShiroRealm(EhCacheManager ehCacheManager) {
-		HikShiroRealm hikShiroRealm = new HikShiroRealm();
+	public ShiroRealm hikShiroRealm(EhCacheManager ehCacheManager) {
+		ShiroRealm hikShiroRealm = new ShiroRealm();
 		hikShiroRealm.setCacheManager(ehCacheManager);
 		return hikShiroRealm;
 	}
@@ -110,7 +110,7 @@ public class ShiroConfig {
 	 * @since 1.0.0
 	 */
 	@Bean
-	public DefaultWebSecurityManager securityManager(HikShiroRealm realm) {
+	public DefaultWebSecurityManager securityManager(ShiroRealm realm) {
 		DefaultWebSecurityManager securityManager = new DefaultWebSecurityManager();
 		securityManager.setRealm(realm);
 		securityManager.setCacheManager(ehCacheManager());

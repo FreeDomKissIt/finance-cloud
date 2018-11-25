@@ -5,7 +5,6 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 import com.qykj.finance.sys.service.DictionaryService;
-import com.qykj.finance.sys.service.DistrictService;
 import com.qykj.finance.sys.service.MenuService;
 
 import lombok.extern.slf4j.Slf4j;
@@ -20,8 +19,6 @@ import lombok.extern.slf4j.Slf4j;
 public class CacheReloadTask {
 	@Autowired
 	private MenuService menuService;
-	@Autowired
-	private DistrictService districtService;
 	@Autowired
 	private DictionaryService dictionaryService;
 	

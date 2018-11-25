@@ -2,8 +2,6 @@ package com.qykj.finance.core.shiro;
 
 import org.apache.shiro.authc.SimpleAuthenticationInfo;
 
-import com.qykj.finance.core.cache.CacheContainer;
-import com.qykj.finance.shiro.Credentials;
 import com.qykj.finance.sys.model.User;
 
 /**
@@ -42,6 +40,6 @@ public class FinanceAuthenticationInfo extends SimpleAuthenticationInfo {
 	 * @since     V1.0.0
 	 */
 	protected void getAuthorizeInfo() {
-		Credentials.validate(CacheContainer.getLicense());
+		//Credentials.validate(CacheContainer.getLicense());
 	}
 }

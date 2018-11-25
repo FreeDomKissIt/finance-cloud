@@ -16,7 +16,6 @@ import com.qykj.finance.sys.model.RoleMenu;
 import com.qykj.finance.sys.repository.RoleMenuRepository;
 import com.qykj.finance.sys.repository.RoleRepository;
 import com.qykj.finance.sys.service.RoleService;
-import com.qykj.finance.util.SessionUtil;
 
 /**
  * 角色接口实现 文件名: RoleServiceImpl.java <br/>

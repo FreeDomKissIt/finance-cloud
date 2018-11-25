@@ -22,7 +22,7 @@
 	</properties>
 	<modules>
 		<module>finance-cloud.web</module>
-<!-- 		<module>finance-cloud.mobile</module> -->
+		<!-- <module>finance-cloud.mobile</module> -->
 	</modules>
 	
 </project>

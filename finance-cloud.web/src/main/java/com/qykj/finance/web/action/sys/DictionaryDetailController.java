@@ -17,11 +17,11 @@ import com.github.pagehelper.Page;
 import com.qykj.finance.core.exception.JSONDataException;
 import com.qykj.finance.core.util.ActionPageResponse;
 import com.qykj.finance.core.util.ActionResponse;
-import com.qykj.finance.core.util.ListUtils;
 import com.qykj.finance.sys.form.DictionaryForm;
 import com.qykj.finance.sys.form.DictionaryTree;
 import com.qykj.finance.sys.model.Dictionary;
 import com.qykj.finance.sys.service.DictionaryService;
+import com.qykj.finance.util.ListUtils;
 
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;

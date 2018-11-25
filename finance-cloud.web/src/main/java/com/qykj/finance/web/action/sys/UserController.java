@@ -18,15 +18,13 @@ import com.github.pagehelper.Page;
 import com.qykj.finance.core.persistence.service.QueryService;
 import com.qykj.finance.core.util.ActionPageResponse;
 import com.qykj.finance.core.util.ActionResponse;
-import com.qykj.finance.core.util.ListUtils;
 import com.qykj.finance.core.view.Combox;
-import com.qykj.finance.core.ztree.DistrictOrgTree;
 import com.qykj.finance.sys.form.UpdatePasswordForm;
 import com.qykj.finance.sys.form.UserForm;
 import com.qykj.finance.sys.model.User;
-import com.qykj.finance.sys.service.OrgService;
 import com.qykj.finance.sys.service.RoleService;
 import com.qykj.finance.sys.service.UserService;
+import com.qykj.finance.util.ListUtils;
 import com.qykj.finance.util.SessionUtil;
 
 import io.swagger.annotations.ApiOperation;
@@ -47,8 +45,6 @@ public class UserController {
 	QueryService queryService;
 	@Autowired
 	UserService userService;
-	@Autowired
-	OrgService orgService;
 	@Autowired
 	RoleService roleService;
 	
@@ -302,13 +298,13 @@ public class UserController {
 	 * @see [相关类/方法]
 	 * @since V1.0.0
 	 */
-	@ApiOperation(value = "单位选择框树", notes = "单位选择框树")
+	/*@ApiOperation(value = "单位选择框树", notes = "单位选择框树")
 	@PostMapping("org/combox")
 	@ResponseBody
 	public ResponseEntity<ActionResponse<DistrictOrgTree>> combox(Integer orgId) {
 		DistrictOrgTree tree = orgService.getOrgComboxTree(orgId);
 		return ActionResponse.ok(tree);
-	}
+	}*/
 	
 	/**
 	 * 用户角色下拉框值

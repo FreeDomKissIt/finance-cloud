@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.qykj.finance.core.exception.JSONDataException;
 import com.qykj.finance.core.exception.PageException;
 import com.qykj.finance.core.util.ActionResponse;
-import com.qykj.finance.core.util.exception.ExpectedException;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -101,9 +100,4 @@ public class GlobalExceptionHandler {
 		return "error/error";
 	}
 
-	@ExceptionHandler(value = { ExpectedException.class })
-	@ResponseBody
-	public ResponseEntity<ActionResponse<Object>> ExpectedException(ExpectedException exception) {
-		return ActionResponse.fail(400, exception.getMessage());
-	}
 }
